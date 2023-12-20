@@ -61,7 +61,7 @@
 			compatible = "zmk,behavior-sensor-rotate";
 			label = "MISSION_CONTROL";
 			#sensor-binding-cells = <0>;
-			bindings = <&mission_left>, <&mission_right>;
+			bindings = <&mission_right>, <&mission_left>;
 		};
 	};
 

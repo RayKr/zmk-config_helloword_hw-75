@@ -32,6 +32,22 @@
 				   <&macro_release &kp LSHIFT>,
 				   <&macro_release &kp LALT>;
 		};
+		mission_left: mission-left {
+			label = "MISSION_LEFT";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_press   &kp LCTRL>,
+				   <&macro_tap     &kp LEFT_ARROW>,
+				   <&macro_release &kp LCTRL>;
+		};
+		mission_right: mission-right {
+			label = "MISSION_RIGHT";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_press   &kp LCTRL>,
+				   <&macro_tap     &kp RIGHT_ARROW>,
+				   <&macro_release &kp LCTRL>;
+		};
 	};
 
 	behaviors {
@@ -40,6 +56,12 @@
 			label = "SWITCH_TASKS";
 			#sensor-binding-cells = <0>;
 			bindings = <&tasks_forward>, <&tasks_backward>;
+		};
+		mission_control: mission-control {
+			compatible = "zmk,behavior-sensor-rotate";
+			label = "MISSION_CONTROL";
+			#sensor-binding-cells = <0>;
+			bindings = <&mission_left>, <&mission_right>;
 		};
 	};
 
@@ -64,7 +86,7 @@
 			label = "窗口";
 			icon = [EF 85 9E];
 			bindings = <&trans &trans>;
-			sensor-bindings = <&switch_tasks>;
+			sensor-bindings = <&mission_control>;
 			profile = <&profile_spring>;
 		};
 

@@ -37,7 +37,7 @@
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&macro_press   &kp LCTRL>,
-				   <&macro_tap     &kp LEFT_ARROW>,
+				   <&macro_tap     &kp LEFT>,
 				   <&macro_release &kp LCTRL>;
 		};
 		mission_right: mission-right {
@@ -45,7 +45,7 @@
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&macro_press   &kp LCTRL>,
-				   <&macro_tap     &kp RIGHT_ARROW>,
+				   <&macro_tap     &kp RIGHT>,
 				   <&macro_release &kp LCTRL>;
 		};
 	};

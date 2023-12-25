@@ -48,6 +48,30 @@
 				   <&macro_tap     &kp RIGHT>,
 				   <&macro_release &kp LCTRL>;
 		};
+		light_turn_on: light-turn-on {
+			label = "LIGHT_TURN_ON";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_press   &kp LCTRL>,
+				   <&macro_press   &kp LALT>,
+				   <&macro_press     &kp LSHIFT>,
+				   <&macro_tap     &kp O>,
+				   <&macro_release &kp LCTRL>;
+				   <&macro_release &kp LALT>;
+				   <&macro_release &kp LSHIFT>;
+		};
+		light_turn_off: light-turn-off {
+			label = "LIGHT_TURN_OFF";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_press   &kp LCTRL>,
+				   <&macro_press   &kp LALT>,
+				   <&macro_press     &kp LSHIFT>,
+				   <&macro_tap     &kp F>,
+				   <&macro_release &kp LCTRL>;
+				   <&macro_release &kp LALT>;
+				   <&macro_release &kp LSHIFT>;
+		};
 	};
 
 	behaviors {
@@ -62,6 +86,12 @@
 			label = "MISSION_CONTROL";
 			#sensor-binding-cells = <0>;
 			bindings = <&mission_right>, <&mission_left>;
+		};
+		light_control: light-control {
+			compatible = "zmk,behavior-sensor-rotate";
+			label = "MISSION_CONTROL";
+			#sensor-binding-cells = <0>;
+			bindings = <&light_turn_on>, <&light_turn_off>;
 		};
 	};
 
@@ -80,6 +110,14 @@
 			icon = [EF 86 98];
 			bindings = <&trans &trans>;
 			sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
+		};
+
+		brightness {
+			label = "台灯";
+			icon = [EF 86 98];
+			bindings = <&trans &trans>;
+			sensor-bindings = <&light_control>;
+			profile = <&profile_switch>;
 		};
 
 		scroll {

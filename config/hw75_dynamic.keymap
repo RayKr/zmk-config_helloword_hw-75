@@ -112,14 +112,6 @@
 			sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
 		};
 
-		light {
-			label = "台灯";
-			icon = [EF 86 98];
-			bindings = <&trans &trans>;
-			sensor-bindings = <&light_control>;
-			profile = <&profile_switch>;
-		};
-
 		scroll {
 			label = "滚动";
 			icon = [EF 86 8A];

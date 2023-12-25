@@ -109,7 +109,7 @@
 			label = "亮度";
 			icon = [EF 86 98];
 			bindings = <&trans &trans>;
-			sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
+			sensor-bindings = <&inc_dec_kp C_BRI_DEC C_BRI_INC>;
 		};
 
 		scroll {

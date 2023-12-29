@@ -148,8 +148,8 @@
 			label = "窗口";
 			icon = [EF 85 9E];
 			bindings = <&trans &trans>;
-			sensor-bindings = <&mission_control>;
-			profile = <&profile_spring>;
+			sensor-bindings = <&window_move>;
+			profile = <&profile_spin>;
 		};
 
 		arrow_vertical {

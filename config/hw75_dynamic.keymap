@@ -44,8 +44,26 @@
 			label = "MISSION_RIGHT";
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
+			bindings = <&macro_press   &kp LCTRL>,
+				   <&macro_tap     &kp RIGHT>,
+				   <&macro_release &kp LCTRL>;
+		};
+		next_window: next-window{
+			label = "NEXT_WINDOW";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
 			bindings = <&macro_press   &kp LEFT_COMMAND>,
 				   <&macro_tap     &kp GRAVE>,
+				   <&macro_release &kp LEFT_COMMAND>;
+		};
+		preview_window: preview-window {
+			label = "PREVIEW_WINDOW";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_press   &kp LEFT_COMMAND>,
+				   <&macro_press   &kp LSHIFT>,
+				   <&macro_tap     &kp GRAVE>,
+				   <&macro_release &kp LSHIFT>,
 				   <&macro_release &kp LEFT_COMMAND>;
 		};
 		light_turn_on: light-turn-on {
@@ -86,6 +104,12 @@
 			label = "MISSION_CONTROL";
 			#sensor-binding-cells = <0>;
 			bindings = <&mission_right>, <&mission_left>;
+		};
+		window_move: window-move {
+			compatible = "zmk,behavior-sensor-rotate";
+			label = "WINDOW_MOVE";
+			#sensor-binding-cells = <0>;
+			bindings = <&preview_window>, <&next_window>;
 		};
 		light_control: light-control {
 			compatible = "zmk,behavior-sensor-rotate";
